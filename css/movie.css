@@ -1,0 +1,21 @@
+.movie{
+    display: flex;
+}
+
+.movie__poster img{
+    width:265px;
+    height: 375px;
+    margin-right: 20px;
+}
+
+.movie__box{
+    margin-top: 100px;
+    display: flex;
+
+
+}
+
+.movie__poster img:hover{
+    scale: 1.1;
+    transition: 1s all;
+}
