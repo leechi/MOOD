@@ -12,6 +12,11 @@
     width:100%;
     height: 700px;
 }
+
+.main-video{
+    width:100%;
+    height: 700px;
+}
 .video__button{
     position: absolute;
     top:100px;

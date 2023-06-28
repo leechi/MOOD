@@ -6,6 +6,20 @@ let video = document.querySelector('.video');
 let videoVideo = document.createElement('video');
 let videoBtn = document.createElement('button')
 let playBtn = document.querySelector('.main__buttons--play')
+// let hashBox = document.querySelectorAll('#hashBox li')
+
+
+
+videoVideo.classList.add('video__video')
+videoBtn.innerHTML = `<i class="fa-regular fa-circle-xmark"></i>`
+videoBtn.classList.add('video__button')
+video.appendChild(videoVideo)
+video.appendChild(videoBtn)
+videoVideo.setAttribute('controls', '');
+videoVideo.src = 'asset/video/notebook_mov.mp4';
+
+
+
 
 let data;
 const getData = () => {
@@ -41,8 +55,12 @@ if (savedImg === 'asset/profile_/anger.png') {
 } else if (savedImg === 'asset/profile_/sadness.png') {
     movieTitle.innerHTML = '슬픔이';
     categoryData = sadnessData;
-} else {
+} else if(savedImg === null){
     // savedImg에 해당하는 이미지가 없는 경우 기본값으로 설정할 작업을 수행합니다.
+    movieTitle.innerHTML = '';
+    categoryData;
+    
+
 }
 
 if (categoryData) {
@@ -51,6 +69,7 @@ if (categoryData) {
         poster.classList.add('movie__poster');
         let posterImg = document.createElement('img');
         posterImg.src = `${categoryData[i].movie_posterLikg}`;
+        posterImg.alt = `${categoryData[i].movie_hashTag}`
         poster.appendChild(posterImg);
         autoplay.appendChild(poster);
         videoVideo.classList.add('video__video')
@@ -59,6 +78,7 @@ if (categoryData) {
         video.appendChild(videoVideo)
         video.appendChild(videoBtn)
         videoVideo.setAttribute('controls', '');
+        
     }
 
     let posterImg = document.querySelectorAll('.movie__poster img');
@@ -84,6 +104,7 @@ if (categoryData) {
 
 
 
+
 videoBtn.addEventListener('click', () => {
     video.classList.remove('visible')
 })
@@ -94,3 +115,4 @@ playBtn.addEventListener('click', () => {
     
     video.classList.add('visible')
 })
+

@@ -35,6 +35,9 @@ detailBtn.classList.add('detail__modal--button')
 detailBtn.innerHTML = `<i class="fa-solid fa-play"></i> 재생`
 detailModal.appendChild(detailBtn)
 
+detailBtn.addEventListener('click', () => {
+    
+})
 
 
 
@@ -55,22 +58,22 @@ detailInfo.appendChild(detailHeader)
 
 let detailTitle = document.createElement('h1')
 detailTitle.classList.add('detail__info--title')
-detailTitle.innerText = '어바웃타임'
+detailTitle.innerText = '인사이드아웃'
 detailHeader.appendChild(detailTitle)
 
 let detailOpenDay = document.createElement('span')
 detailOpenDay.classList.add('detail__info--open-year')
-detailOpenDay.innerText = '2013'
+detailOpenDay.innerText = '2015'
 detailHeader.appendChild(detailOpenDay)
 
 let detailRecommend = document.createElement('h1')
 detailRecommend.classList.add('detail__modal--recommend')
-detailRecommend.innerHTML = '<i class="fa-regular fa-face-smile"></i> 이치연 10번 봄'
+detailRecommend.innerHTML = `<i class="fa-regular fa-face-smile"></i> 혜빈's Pick`
 detailInfo.appendChild(detailRecommend)
 
 let detailDesc = document.createElement('p')
 detailDesc.classList.add('detail__modal--desc')
-detailDesc.innerText = '어바웃 타임(영어: About Time)은 2013년에 개봉한 영국의 로맨틱 코미디 드라마 영화다. 자신의 과거를 변경할 수 있는 타임슬립이란 특별한 능력을 가진 젊은 남자가 첫눈에 반한 여자와의 완벽한 사랑을 이루기 위해 시간여행을 하는 이야기다.'
+detailDesc.innerText = '하키를 좋아하는 11살 소녀 라일리는 행복한 삶을 살고 있다. 그러나 부모님과 함께 샌프란시스코로 이사하면서 그녀의 삶은 완전히 뒤바뀐다. 기쁨은 이런 큰 변화 속에서 라일리의 감정을 잘 다스리려고 노력한다. 그러나, 이사로 인한 스트레스로 슬픔이 나타나고 만다. 라일리의 기분을 위해 고군분투하던 기쁨과 슬픔은 먼 곳에 떨어져 버리고 결국 라일리의 감정 컨트롤 본부에는 악감정만이 남게 된다.'
 detailInfo.appendChild(detailDesc)
 
 

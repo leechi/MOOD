@@ -11,7 +11,7 @@ let headerBack = document.querySelector('.header')
      if (scrollY > 100) {
          headerBack.style.backgroundColor = 'rgba(0,0,0,0.8)'
      }else if (screenY === 0) {
-         headerBack.style.backgroundColor = 'transparent'
+         headerBack.style.backgroundColor = 'rgba(0,0,0,0.1)'
      }
  });
 
