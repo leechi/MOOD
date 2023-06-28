@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    z-index: 1010101001010101011010;   
+    z-index: 100;   
 }
 .profile-img__box img{
     height: 100px;

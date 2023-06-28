@@ -1,16 +1,35 @@
 .header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 30px 0;
-
     position: fixed;
     width: 100%;
     /* background-color: black; */
     z-index: 100000;
   
 }
+.header__visible{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.header__hashtag{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;   
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+    height: 200px;
+    
+}
+.header__hashtag ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    font-weight: 50px;
+    font-size:30px;
+}
 .header__flex{
     display: flex;
     align-items: center;

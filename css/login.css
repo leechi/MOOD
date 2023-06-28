@@ -8,10 +8,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
     position: fixed;
-    z-index: 10000000000;
+    z-index: 100;
 }
 .login__form{
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     width: 30%;
     height: 50%;
     display: flex;
@@ -28,6 +28,10 @@
     border: none;
     border-radius: 5px;
 }
+.login__form__input:focus{
+    border: none;
+}
+
 .login__form__button{
     width:250px;
     height: 40px;
@@ -53,4 +57,11 @@
 .alert{
     color: white;
     font-size: 20px;
+}
+
+.login__video{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    height: 1000px;
 }
