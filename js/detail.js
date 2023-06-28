@@ -51,6 +51,7 @@ detailModal.appendChild(detailInfo)
 let detailHeader = document.createElement('div')
 detailHeader.classList.add('detail__info__header')          
 detailInfo.appendChild(detailHeader)
+// 여기서부터 제목 개봉일 추천 설명
 
 let detailTitle = document.createElement('h1')
 detailTitle.classList.add('detail__info--title')
