@@ -5,6 +5,11 @@ let infoBtn = document.querySelector('.main__buttons--info')
 
 let detail = document.querySelector('.detail')
 
+detail.addEventListener('click', (event) => {
+    if (event.target === detail) {
+        detail.classList.remove('visible')
+    }
+})
 
 infoBtn.addEventListener('click', () => {
     detail.classList.add('visible')
@@ -19,20 +24,24 @@ detailImg.src = 'asset/abouttime/1.jpeg'
 detailImg.classList.add('detail__modal--img')
 detailModal.appendChild(detailImg)
 
+
 let deleteBtn = document.createElement('i')
 deleteBtn.classList.add('fa-regular', 'fa-circle-xmark', 'delete')
 detailModal.appendChild(deleteBtn)
 
+
 let detailBtn = document.createElement('button')
 detailBtn.classList.add('detail__modal--button')
-let playIcon = document.createElement('i')
-playIcon.classList.add('fa-solid', 'fa-play')
-detailBtn.appendChild(playIcon)
-detailBtn.innerText = '재생'
+detailBtn.innerHTML = `<i class="fa-solid fa-play"></i> 재생`
 detailModal.appendChild(detailBtn)
 
-let heartIcon = document.createElement('i')
-heartIcon.classList.add('fa-solid', 'fa-heart', 'detail__modal--heart')
+
+
+
+let heartIcon = document.createElement('button')
+
+heartIcon.innerHTML = '<i class="fa-regular fa-heart"></i>'
+heartIcon.classList.add('detail__modal--heart')
 detailModal.appendChild(heartIcon)
 
 let detailInfo = document.createElement('div')
@@ -64,7 +73,14 @@ detailDesc.innerText = '어바웃 타임(영어: About Time)은 2013년에 개�
 detailInfo.appendChild(detailDesc)
 
 
-// click
+let count = 0
+heartIcon.addEventListener('click', () => {
+    count++
+    console.log(count)
+    if(count % 2 === 1) heartIcon.innerHTML = '<i class="fa-solid fa-heart"></i>'
+    else heartIcon.innerHTML = '<i class="fa-regular fa-heart"></i>'
+    console.log('hi')
+})
 
 deleteBtn.addEventListener('click', () => {
     detail.classList.remove('visible')

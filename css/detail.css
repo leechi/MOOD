@@ -1,7 +1,6 @@
 
 
 .detail{
-
     background-color: rgba(0,0,0,0.7);
     height: 800px;
     width: 100%;
@@ -9,8 +8,8 @@
     position: fixed;
     justify-content: center;
     align-items: center;
-    z-index: 100;
-        display: none;
+    z-index: 1000;
+    display: none;
 }
 
 .detail__modal{
@@ -90,4 +89,19 @@
 
 .visible{
     display: flex;
+}
+
+.detail__modal--button{
+    border: none;
+}
+.detail__modal--heart{
+    border: none;
+    background-color: rgba(0,0,0,0);
+    font-size: 30px;
+
+}
+
+.detail__modal--heart:hover{
+    transition: 0.7s ease;
+    scale: 1.1;
 }

@@ -7,7 +7,7 @@ let joy = document.querySelector('#joy')
 let sadness = document.querySelector("#sadness")
 let title = document.querySelector('.header__title')
 
-let color = 'white'
+let color = '#d6a8e9'
 
 profileBtn.addEventListener('click', () => {
     profileBox.classList.remove('hidden')
@@ -21,6 +21,7 @@ anger.addEventListener('click',() => {
     color = 'red'
     title.style.color = color
     localStorage.setItem('color', color)
+    location.reload()
 })
 
 disgust.addEventListener('click', ()=> {
@@ -30,6 +31,7 @@ disgust.addEventListener('click', ()=> {
     color = 'green'
     title.style.color = color
     localStorage.setItem('color', color)
+    location.reload()
 })
 
 joy.addEventListener('click', () => {
@@ -40,6 +42,7 @@ joy.addEventListener('click', () => {
     color = 'yellow'
     title.style.color = color
     localStorage.setItem('color', color)
+    location.reload()
 })
 
 sadness.addEventListener('click', () => {
@@ -49,6 +52,7 @@ sadness.addEventListener('click', () => {
     color = '#5592cd'
     title.style.color = color
     localStorage.setItem('color', color)
+    location.reload()
 })
 
 let savedImg = localStorage.getItem('img')

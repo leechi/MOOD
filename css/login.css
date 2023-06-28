@@ -1,6 +1,6 @@
 .login{
     background-color: black;
-    height: 1000px;
+    height: 800px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -8,10 +8,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
     position: fixed;
-    z-index: 100;
+    z-index: 100000;
 }
 .login__form{
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,1);
     width: 30%;
     height: 50%;
     display: flex;
@@ -28,16 +28,14 @@
     border: none;
     border-radius: 5px;
 }
-.login__form__input:focus{
-    border: none;
-}
+
 
 .login__form__button{
     width:250px;
     height: 40px;
     font-size: 22px;
     color: white;
-    background-color: red;
+    background-color: #d6a8e9;;
     border:none;
     border-radius: 7px;
 }
@@ -47,9 +45,8 @@
     margin-bottom:30px;
 }
 
-.login__form__input:focus{
-    border: none;
-}
+.login__form__input:focus{ outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 20px #d6a8e9; }
+
 .login__form__input::placeholder{
     padding-left: 10px;
 }
