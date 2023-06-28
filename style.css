@@ -2,10 +2,16 @@
 @import url('css/header.css');
 @import url('css/main.css');
 @import url('css/movie.css');
+@import url('css/login.css');
+@import url('css/profile.css');
 
 body{
     background-color: black;
-    height: 3000px;
+    height: 1500px;
+}
+
+*{
+    box-sizing: border-box;
 }
 
 :root{
