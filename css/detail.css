@@ -80,6 +80,10 @@
 .detail__modal--desc{
     margin:30px;
     color: white;
+    line-height: 1.8;
+    height: 200px;
+    overflow: scroll;
+    
 }
 
 .detail__modal--button:hover, .detail__modal--heart:hover, .delete:hover{

@@ -6,14 +6,17 @@
 @import url('css/profile.css');
 @import url('css/detail.css');
 @import url('css/footer.css');
-
+@import url('css/video.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 body{
     background-color: black;
     height: 1500px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 *{
     box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 :root{

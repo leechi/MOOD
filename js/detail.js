@@ -20,7 +20,7 @@ detailModal.classList.add('detail__modal')
 detail.appendChild(detailModal)
 
 let detailImg = document.createElement('img')
-detailImg.src = 'asset/abouttime/1.jpeg'
+detailImg.src = 'asset/1.jpeg'
 detailImg.classList.add('detail__modal--img')
 detailModal.appendChild(detailImg)
 

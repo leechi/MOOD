@@ -1,92 +1,96 @@
+let autoplay = document.querySelector('.autoplay');
+let posters = document.querySelectorAll('.movie__poster img');
+let movieTitle = document.querySelector('.movie__title');
+let mainImg = document.querySelector('.main__main-img');
+let video = document.querySelector('.video');
+let videoVideo = document.createElement('video');
+let videoBtn = document.createElement('button')
+let playBtn = document.querySelector('.main__buttons--play')
 
-let autoplay = document.querySelector('.autoplay')
+let data;
+const getData = () => {
+    const request = new XMLHttpRequest();
+    request.open('GET', 'db.json', false);
+    request.send();
+    console.log(request.status);
+    if (request.status === 200) {
+        data = JSON.parse(request.responseText);
+        console.log(data);
+    }
+};
 
-let posters = document.querySelectorAll('.movie__poster img')
+getData();
+console.log(data);
 
-let movieTitle = document.querySelector('.movie__title')
+let sadnessData = data[1].sadness;
+let disgustData = data[2].disgust;
+let angerData = data[3].anger;
+let joyData = data[0].joy;
 
-let mainImg = document.querySelector('.main__main-img')
-
-
-
-
-
-let answer = [{
-    img: 'asset/poster/anger/harryPotter.jpg',
-    title: '해리포터',
-    desc: '해리포터는 재밌어',
-    openday: '2000',
-    recommend : '힘들다.'
-},{
-    img: 'asset/poster/anger/Paris.jpg',
-        title: '파리는 너무 짜증나',
-    desc: '파리는 더러워',
-    openday: '2002',
-    recommend : '힘들다.'
-},{
-    img: 'asset/poster/anger/secret.jpg',
-        title: '비밀~',
-    desc: '비밀이지롱',
-    openday: '2005',
-    recommend : '힘들다.'
-},{
-    img: 'asset/poster/anger/topGun.jpg',
-        title: '탑건',
-    desc: '바텀건',
-    openday: '2022',
-    recommend : '힘들다.'
-},
-    
-]
-
-
-
-
-for (let i = 0; i < 4; i++){
-    let poster = document.createElement('div')
-    poster.classList.add('movie__poster')
-    let posterImg = document.createElement('img')
-    posterImg.src = `${answer[i].img}`
-    poster.appendChild(posterImg)
-    autoplay.appendChild(poster)
-    
-}
-
-let posterImg = document.querySelectorAll('.movie__poster img')
-let mainTitle = document.querySelector('.main__info--title')
-let mainDesc = document.querySelector('.main__info--desc')
-
-
-// 포스터를 클릭하면 바로 이미지 콘솔에 뜨게끔
-
-    for (let i = 0; i < answer.length; i++){
-        posterImg[i].addEventListener('click', () => {
-            mainTitle.innerHTML = answer[i].title
-            mainDesc.innerHTML = answer[i].desc
-            mainImg.src = answer[i].img
-            console.log(posterImg[i])
-            detailTitle.innerHTML = answer[i].title
-            detailOpenDay.innerHTML = answer[i].openday
-            detailRecommend.innerHTML = answer[i].recommend
-            detailDesc.innerHTML = answer[i].desc
-            detailImg.innerHTML = answer[i].img
-        })   
-    }  
-
-
+let categoryData;
 
 if (savedImg === 'asset/profile_/anger.png') {
-    movieTitle.innerHTML = `버럭이`
+    movieTitle.innerHTML = '버럭이';
+    categoryData = angerData;
+} else if (savedImg === 'asset/profile_/disgust.png') {
+    movieTitle.innerHTML = '까칠이';
+    categoryData = disgustData;
+} else if (savedImg === 'asset/profile_/joy.png') {
+    movieTitle.innerHTML = '기쁨이';
+    categoryData = joyData;
+} else if (savedImg === 'asset/profile_/sadness.png') {
+    movieTitle.innerHTML = '슬픔이';
+    categoryData = sadnessData;
+} else {
+    // savedImg에 해당하는 이미지가 없는 경우 기본값으로 설정할 작업을 수행합니다.
 }
 
-if (savedImg === 'asset/profile_/disgust.png') {
-    movieTitle.innerHTML = `까칠이`
+if (categoryData) {
+    for (let i = 0; i < categoryData.length; i++) {
+        let poster = document.createElement('div');
+        poster.classList.add('movie__poster');
+        let posterImg = document.createElement('img');
+        posterImg.src = `${categoryData[i].movie_posterLikg}`;
+        poster.appendChild(posterImg);
+        autoplay.appendChild(poster);
+        videoVideo.classList.add('video__video')
+        videoBtn.innerHTML = `<i class="fa-regular fa-circle-xmark"></i>`
+        videoBtn.classList.add('video__button')
+        video.appendChild(videoVideo)
+        video.appendChild(videoBtn)
+        videoVideo.setAttribute('controls', '');
+    }
+
+    let posterImg = document.querySelectorAll('.movie__poster img');
+    let mainTitle = document.querySelector('.main__info--title');
+    let mainDesc = document.querySelector('.main__info--desc');
+
+    for (let i = 0; i < categoryData.length; i++) {
+        posterImg[i].addEventListener('click', () => {
+            mainTitle.innerHTML = categoryData[i].movie_title;
+            mainDesc.innerHTML = categoryData[i].movie_eva;
+            mainImg.src = categoryData[i].movie_imgLing;
+            detailTitle.innerHTML = categoryData[i].movie_title;
+            detailOpenDay.innerHTML = categoryData[i].movie_openDay;
+            detailRecommend.innerHTML = categoryData[i].recommend;
+            detailDesc.innerHTML = categoryData[i].movie_info;
+            detailImg.src = categoryData[i].movie_imgLing;
+            detailRecommend.innerHTML = categoryData[i].movie_hashTag;
+            videoVideo.src = categoryData[i].movie_link;
+        });
+    }
 }
 
-if (savedImg === 'asset/profile_/joy.png') {
-   movieTitle.innerHTML = `기쁨이`
-}
 
-if (savedImg === 'asset/profile_/sadness.png') {
-    movieTitle.innerHTML = `슬픔이`
-}
+
+
+videoBtn.addEventListener('click', () => {
+    video.classList.remove('visible')
+})
+
+
+
+playBtn.addEventListener('click', () => {
+    
+    video.classList.add('visible')
+})

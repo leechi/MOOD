@@ -13,12 +13,13 @@
 .main__box{
     /* body기준으로 absolute를 줌 */
     position: absolute;
-    top:500px;
+    top:450px;
     left: 500px;
 }
 
 .main__info{
     color: white;
+    width: 400px;
 }
 
 .main__info--title{
