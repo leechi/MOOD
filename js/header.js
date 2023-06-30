@@ -5,7 +5,15 @@ let hashTag = document.querySelector('.header__search')
 let hashTagBox = document.querySelector('.header__hashtag')
 let hashTags = document.querySelectorAll('.header__hashtag ul li')
 let headerBack = document.querySelector('.header')
+let scrollhead = document.querySelector('.header__nav__list--hastag')
 
+scrollhead.addEventListener('click', () => {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+})
 
  window.addEventListener('scroll', () => {
      if (scrollY > 100) {

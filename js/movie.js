@@ -16,7 +16,7 @@ videoBtn.classList.add('video__button')
 video.appendChild(videoVideo)
 video.appendChild(videoBtn)
 videoVideo.setAttribute('controls', '');
-videoVideo.src = 'asset/video/notebook_mov.mp4';
+videoVideo.src = 'asset/main.mp4';
 
 
 

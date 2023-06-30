@@ -126,12 +126,12 @@
     height: 100px;
 }
 
-.header__profile__dropdown li:hover{
+.header__profile__dropdown li:last-child:hover{
     cursor: pointer;
     
 }
 
-.header__profile__dropdown li:hover{
+.header__profile__dropdown li:last-child:hover{
     background-color: gray;
 }
 
